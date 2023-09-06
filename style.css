@@ -19,3 +19,20 @@
     font-family: 'Black Ops One', cursive;
     color: #001aff;
 }
+
+.START {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid palevioletred;
+    background-color: red; 
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;    
+}
+
+#photodiv {
+    margin-top: 10px;
+    display: none;
+    width: 100%;
+    text-align: center;
+}

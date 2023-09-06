@@ -6,8 +6,19 @@
     <link rel="stylesheet" href="style.css">
     <title>Website - Best website</title>
 </head>
+<script>
+    function showPhoto() {
+        if (document.getElementById("photodiv").style.display === "block") {
+            document.getElementById("photodiv").style.display = "none";
+        } else {
+            document.getElementById("photodiv").style.display = "block";
+        }
+    }
+</script>
 <body>
     <marquee behavior="alternate" direction="right" scrollamount="12" class="scroll"><span class="rainbow"> Best Website</span></marquee>
     <h1 class="BIGHEAD">Hi</h1>
+    <button class="START" onclick="showPhoto()">Start</button>
+    <div id="photodiv"><img src="reun.png"></div>
 </body>
 </html>
