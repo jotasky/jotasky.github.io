@@ -1,12 +1,13 @@
-  @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rubik+Iso&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rubik+Iso&display=swap');
+* {
     margin: 0 auto;
 }
 .scroll {
     background-color: #fd917549;
     margin-top: 10px;
-    height:30px;
-    font-family: 'Black Ops One', cursive;}
+    height: 30px;
+    font-family: 'Black Ops One', cursive;
+}
 .rainbow {
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
     background-clip: text;
@@ -19,20 +20,33 @@
     font-family: 'Black Ops One', cursive;
     color: #001aff;
 }
-
 .START {
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid palevioletred;
-    background-color: red; 
+    background-color: red;
     padding: 10px 30px 10px 30px;
-    border-radius: 20px;    
+    border-radius: 20px;
 }
-
 #photodiv {
+    animation: fadeIn 800ms;
     margin-top: 10px;
     display: none;
     width: 100%;
     text-align: center;
+}
+
+.fadeIn {
+    animation: fadeIn 500ms;
+    display: block;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

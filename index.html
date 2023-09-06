@@ -7,12 +7,39 @@
     <title>Website - Best website</title>
 </head>
 <script>
+    let isPhotoVisible = false; // Initialize a variable to track the visibility of the photo
+
     function showPhoto() {
-        if (document.getElementById("photodiv").style.display === "block") {
-            document.getElementById("photodiv").style.display = "none";
+        const photoDiv = document.getElementById("photodiv");
+
+        if (!isPhotoVisible) {
+            // If the photo is not visible, fade it in
+            photoDiv.style.opacity = "0"; // Start with opacity 0
+            photoDiv.style.display = "block"; // Show the photo
+
+            const fadeInInterval = setInterval(() => {
+                const currentOpacity = parseFloat(photoDiv.style.opacity);
+                if (currentOpacity >= 1) {
+                    clearInterval(fadeInInterval);
+                } else {
+                    photoDiv.style.opacity = (currentOpacity + 0.1).toString(); // Gradually increase opacity
+                }
+            }, 50);
         } else {
-            document.getElementById("photodiv").style.display = "block";
+            // If the photo is visible, fade it out
+            photoDiv.style.opacity = "1"; // Start with opacity 1
+            const fadeOutInterval = setInterval(() => {
+                const currentOpacity = parseFloat(photoDiv.style.opacity);
+                if (currentOpacity <= 0) {
+                    clearInterval(fadeOutInterval);
+                    photoDiv.style.display = "none"; // Hide the photo after fading out
+                } else {
+                    photoDiv.style.opacity = (currentOpacity - 0.1).toString(); // Gradually decrease opacity
+                }
+            }, 50);
         }
+
+        isPhotoVisible = !isPhotoVisible; // Toggle the visibility status
     }
 </script>
 <body>
